@@ -52,7 +52,7 @@ namespace BruchRechner
                 value = Math.Abs(value);
             }
 
-            // Accuracy is the maximum relative error; convert to absolute maxError
+            
             double maxError = sign == 0 ? accuracy : value * accuracy;
 
             int n = (int)Math.Floor(value);
@@ -130,6 +130,7 @@ namespace BruchRechner
                 ergebnis = dezimal1 + dezimal2;
                 nE = RealToFraction(ergebnis, 0.00001).D;
                 zE = RealToFraction(ergebnis, 0.00001).N;
+                //In Rücksicht hätte ich diese while Schleifen zu ermittlung der Ganzen Zahlen auch in eine Funktion schreiben können
                 while (nE <= zE)
                 {
                     zE = zE - nE;
